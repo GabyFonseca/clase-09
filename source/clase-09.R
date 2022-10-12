@@ -11,7 +11,8 @@ set.seed(12345) # fijar semilla
 
 # load packages
 require(pacman)
-p_load(tidyverse , rio , data.table , png , grid)
+p_load(tidyverse , rio , data.table ,
+       png , grid )
 
 ## Hoy veremos
 
@@ -143,6 +144,7 @@ cat("Hacer en clase")
 #----------------------#
 ## 1. Lista de archivos 
 rutas = list.files("input/chip",full.names = T , recursive = T)
+##list.file me muestra que hay en la carpeta y podria especificar una carpeta en la que quiero ver
 
 #----------------------#
 ## 2. Hacer ejemplo para una observación
@@ -154,10 +156,10 @@ df = import(file = rutas[1])
 name = colnames(df)[1]
 
 ## 2.3. Obtener tipo de inversion
-tipo = df[8,2]
+tipo = df[9,2]
 
 ## 2.4. Obtener valor
-valor = df[8,8]
+valor = df[9,8]
 
 ## 2.5. Exportar resultados
 data = tibble(codigo=name , tipo_inv=tipo , valor_inv=valor)
@@ -177,10 +179,10 @@ for (i in 1:40){
      name = colnames(df)[1]
     
      ## 3.3. Obtener tipo de inversion
-     tipo = df[8,2]
+     tipo = df[9,2]
     
      ## 3.4. Obtener valor
-     valor = df[8,8]
+     valor = df[9,8]
     
      ## 3.5 Exporrt results
      data$codigo[i] = name
